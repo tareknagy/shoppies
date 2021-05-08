@@ -3,6 +3,7 @@ import {Route} from 'react-router-dom';
 import SearchMovies from '../../components/SearchMovies/SearchMovies';
 import Nominations from '../../components/Nominations/Nominations';
 import * as userAPI from '../../utilities/user-api';
+import './NewNominations.css';
 
 const omdbRootUrl = `http://www.omdbapi.com/?apikey=d6b95458&type=movie&s=`;
 
@@ -46,29 +47,33 @@ export default function NewNominations(props){
     }
 
     return (
-        <div className="search-movies">
-            <Route exact path="/nominations/new">
-                <Nominations 
-                    user={props.user._id} 
-                    nominations={nominations} 
-                    handleNomination={handleNomination}
-                    setNominations={setNominations}
-                />
-            </Route>
-            <Route exact path="/nominations/new">
-                <SearchMovies 
-                    user={props.user._id} 
-                    nominations={nominations} 
-                    handleNomination={handleNomination}
-                    setNominations={setNominations}
-                    movies={movies}
-                    setMovies={setMovies}
-                    inputSearch={inputSearch}
-                    setInputSearch={setInputSearch}
-                    handleInputChanges={handleInputChanges}
-                    searchForMovie={searchForMovie}
-                />
-            </Route>
-        </div>
+        <>
+            <div className="search-movies">
+                <Route exact path="/nominations">
+                    <SearchMovies 
+                        user={props.user._id} 
+                        nominations={nominations} 
+                        handleNomination={handleNomination}
+                        setNominations={setNominations}
+                        movies={movies}
+                        setMovies={setMovies}
+                        inputSearch={inputSearch}
+                        setInputSearch={setInputSearch}
+                        handleInputChanges={handleInputChanges}
+                        searchForMovie={searchForMovie}
+                    />
+                </Route>
+            </div>
+            <div className="my-nominations">
+                <Route exact path="/nominations">
+                    <Nominations 
+                        user={props.user._id} 
+                        nominations={nominations} 
+                        handleNomination={handleNomination}
+                        setNominations={setNominations}
+                    />
+                </Route>
+            </div>
+        </>
     );
 }

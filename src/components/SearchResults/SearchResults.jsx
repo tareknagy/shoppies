@@ -1,10 +1,10 @@
 import React from 'react';
 import Movie from '../Movie/Movie';
+import './SearchResults.css';
 
 export default function SearchResults(props){
     return (
-        <div>
-            <h1>Results:</h1>
+        <div className="search-results">
             {props.movies ? props.movies.map((movie, index) => (
                 <Movie 
                     movie={movie} 

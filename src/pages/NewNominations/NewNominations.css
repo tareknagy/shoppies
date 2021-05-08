@@ -1,0 +1,14 @@
+.search-movies {
+    height: 100vh;
+    width: 50vw;
+    padding: 10px;
+    background-color:azure;
+}
+
+.my-nominations {
+    height: auto;
+    width: 50vw;
+    padding: 10px;
+    background-color: darkgrey;
+    overflow: auto;
+}

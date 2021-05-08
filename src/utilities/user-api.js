@@ -9,12 +9,38 @@ export function login(credentials) {
   return sendRequest(`${BASE_URL}/login`, 'POST', credentials);
 }
 
+export function getNominations() {
+  const options = {
+    headers: {
+      Authorization: `Bearer ${getToken()}`
+    }
+  }
+  return fetch(`${BASE_URL}/nominations`, options).then(res => res.json());
+}
+
+export function manageUserNomination(omdbID) {
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${getToken()}`
+    }
+  }
+  return fetch(`${BASE_URL}/nominations/${omdbID}`, options).then(res => res.json());
+
+}
+
+// export function updateUser() {
+//   const
+//   return sendRequest(`${BASE_URL}/nominate`, 'PUT');
+// }
+
 // Functions
 
 // testing purposes only
-export function checkToken() {
-  return sendRequest(`${BASE_URL}/check-token`);
-}
+// export function checkToken() {
+//   return sendRequest(`${BASE_URL}/check-token`);
+// }
 
 async function sendRequest(url, method = 'GET', payload = null) {
   const options = { method };

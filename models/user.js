@@ -18,6 +18,10 @@ const userSchema = new Schema({
       trim: true,
       minLength: 6,
       required: true
+    },
+    nominations: {
+        type: Array, 
+        maxLength: 5
     }
 }, {
     timestamps: true,
@@ -39,5 +43,9 @@ userSchema.pre('save', function(next) {
         return next();
     });
 });
+
+userSchema.statics.getUser = async function(userId) {
+    return this.findOne({_id: userId})
+}
 
 module.exports = mongoose.model('User', userSchema);

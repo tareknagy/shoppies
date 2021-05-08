@@ -1,3 +1,4 @@
+// import user from '../../models/user';
 import * as usersAPI from './user-api';
 
 export async function signUp(userData) {
@@ -44,9 +45,22 @@ export function getUser() {
     return token ? JSON.parse(atob(token.split('.')[1])).user : null;
 }
 
+// export function updateUser() {
+//     return usersAPI.updateUser()
+//         .then(console.log('hi'))
+// }
+
+// export async function updateUser(movieId) {
+//     try {
+//         const user = await usersAPI.updateUser(movieId)
+//         console.log(movieId);
+//     } catch {
+//         throw new Error('Unable to update user');
+//     }
+// }
 
 // testing validation of token, not needed.
-export function checkToken() {
-    return usersAPI.checkToken()
-        .then(dateStr => new Date(dateStr));
-}
+// export function checkToken() {
+//     return usersAPI.checkToken()
+//         .then(dateStr => new Date(dateStr));
+// }

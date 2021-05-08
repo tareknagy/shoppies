@@ -5,8 +5,15 @@ const bcrypt = require('bcrypt');
 
 module.exports = {
     create,
-    login
+    login,
+    manageNominations,
+    nominations
 };
+
+async function nominations(req, res) {
+  const user = await User.getUser(req.user._id);
+  res.json(user.nominations);
+}
 
 async function create(req, res) {
     try {
@@ -34,6 +41,18 @@ async function login(req, res) {
       res.status(400).json('Bad Credentials');
     }
 }
+async function manageNominations(req, res) {
+  const user = await User.getUser(req.user._id);
+  // Delete if there, prevent more than 5.
+  if (user.nominations.indexOf(req.params.id) > 0) {
+    user.nominations.splice(user.nominations.indexOf(req.params.id), 1);
+  } else {
+    user.nominations.length >= 5 ? console.log('You already have 5 nominations!') : user.nominations.push(req.params.id);
+  }
+  user.save();
+  res.json(user)
+;}
+
 
 // Helper functions
 function createJWT(user) {

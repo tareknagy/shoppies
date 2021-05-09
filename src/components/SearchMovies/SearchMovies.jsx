@@ -6,24 +6,28 @@ import './SearchMovies.css'
 export default function SearchMovies(props){
 
     return (
-        <div className="search">
-            <div className="search-form">
-                <h1>Search:</h1>
-                    <input 
-                        type="text"
-                        onChange={props.handleInputChanges}
-                        value={props.inputSearch}
-                        />
-            </div>
+        <>
+            <h1>Find Movies</h1>
+            <div className="search">
+                <div className="movie-container shadow">
+                        <input 
+                            className="search-input"
+                            type="text"
+                            onChange={props.handleInputChanges}
+                            value={props.inputSearch}
+                            placeholder="Search Movies..."
+                            />
+                </div>
 
-            <SearchResults 
-                movies={props.movies} 
-                setMovies={props.setMovies}
-                user={props.user}
-                handleNomination={props.handleNomination}
-                setNominations={props.setNominations}
-                nominations={props.nominations}
-            />
-        </div>
+                <SearchResults 
+                    movies={props.movies} 
+                    setMovies={props.setMovies}
+                    user={props.user}
+                    handleNomination={props.handleNomination}
+                    setNominations={props.setNominations}
+                    nominations={props.nominations}
+                />
+            </div>
+        </>
     );
 }

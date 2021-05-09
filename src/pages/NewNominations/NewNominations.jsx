@@ -48,7 +48,7 @@ export default function NewNominations(props){
 
     return (
         <>
-        { !props.user ?
+        { props.user ?
             <>
             <div className="search-movies">
                 <Route exact path="/nominations">

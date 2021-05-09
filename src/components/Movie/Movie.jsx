@@ -8,12 +8,12 @@ export default function Movie({ movie, index, user, handleNomination, nomination
     }
 
     return (
-        <div>
-            { movie.Title }
-            <br />
-            { movie.Year }
-            <br />
-            <button onClick={() => handleNomination(movie, index)} disabled={nominations.length >= 5 || checkNomination(movie.imdbID)}>
+        <div className="movie-container movie-container-search-results shadow">
+            <div>
+                <span>{ movie.Title }</span>  &nbsp;
+                <span className="movie-date">{ movie.Year }</span>
+            </div>
+            <button className="btn-sm" onClick={() => handleNomination(movie, index)} disabled={nominations.length >= 5 || checkNomination(movie.imdbID)}>
                     { checkNomination(movie.imdbID) ? 'Nominated' : 'Nominate it!' }
             </button>
         </div>

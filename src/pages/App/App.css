@@ -25,6 +25,7 @@ h1 {
 body {
   margin: 0;
   font-family: 'Pangram', 'Helvetica Neue';
+  font-size: 1.5vmin;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--grey-2);
@@ -153,12 +154,54 @@ button:disabled, form:invalid button[type="submit"] {
   background-color: var(--grey-2);
 }
 
+button.btn-sm:disabled {
+  color: var(--white);
+}
+
 button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
 }
 
+.movie-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40vw;
+  border-radius: .7vmin;
+  margin-bottom: 10px;
+  padding: 5px;
+}
 
+.movie-container-your-nominations {
+  background-color: var(--orange);
+}
+
+.movie-container-search {
+  background-color: var(--grey-2);
+}
+
+.movie-container-search-results {
+  background-color: var(--white);
+}
+
+.movie-date {
+  color: var(--grey-1);
+}
+
+.search-input {
+  width: 40vw;
+  height: 100%;
+  font-size: 1.5vmin;
+  font-family: 'Pangram';
+  border: none;
+  border-radius: .5vmin;
+  color: var(--text-dark);
+  background-image: none !important; /* prevent lastpass */
+  background-color: var(--grey-2);
+  outline: none;
+  padding: 4px;
+}
 
 
 

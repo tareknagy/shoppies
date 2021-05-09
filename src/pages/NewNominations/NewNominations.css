@@ -1,14 +1,25 @@
 .search-movies {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     height: 100vh;
     width: 50vw;
     padding: 10px;
-    background-color:azure;
+    background-color: var(--grey-2);
+    overflow: auto;
+    border-right: .1vmin solid var(--white);
 }
 
 .my-nominations {
-    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
     width: 50vw;
     padding: 10px;
-    background-color: darkgrey;
+    background-color: var(--grey-2);
     overflow: auto;
+    border-left: .1vmin solid var(--white);
 }

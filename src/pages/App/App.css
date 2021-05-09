@@ -171,6 +171,6 @@ button[type="submit"] {
   width: 200vw;
   position: fixed;
   /* left: 0; */
-  /* right: 0; */
+  right: 0;
   transition: 1000ms ease;
 }

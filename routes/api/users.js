@@ -7,6 +7,6 @@ router.get('/nominations', usersCtrl.nominations)
 // POST /api/users
 router.post('/', usersCtrl.create);
 router.post('/login', usersCtrl.login);
-router.post('/nominations/:id', usersCtrl.manageNominations);
+router.post('/nominations/:movie', usersCtrl.manageNominations);
 
 module.exports = router;

@@ -43,14 +43,16 @@ async function login(req, res) {
 }
 async function manageNominations(req, res) {
   const user = await User.getUser(req.user._id);
+  const movie = req.params.movie;
+  // user.nominations =[];
   // Delete if there, prevent more than 5.
-  if (user.nominations.indexOf(req.params.id) > 0) {
-    user.nominations.splice(user.nominations.indexOf(req.params.id), 1);
+  if (user.nominations.indexOf(movie) > -1) {
+    user.nominations.splice(user.nominations.indexOf(movie), 1);
   } else {
-    user.nominations.length >= 5 ? console.log('You already have 5 nominations!') : user.nominations.push(req.params.id);
+    user.nominations.length >= 5 ? console.log('You already have 5 nominations!') : user.nominations.push(movie);
   }
   user.save();
-  res.json(user)
+  res.json(user.nominations)
 ;}
 
 

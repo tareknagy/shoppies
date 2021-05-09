@@ -18,7 +18,8 @@ export function getNominations() {
   return fetch(`${BASE_URL}/nominations`, options).then(res => res.json());
 }
 
-export function manageUserNomination(omdbID) {
+export function manageUserNomination(movie) {
+  movie['nominated'] = true;
   const options = {
     method: 'POST',
     headers: {
@@ -26,7 +27,7 @@ export function manageUserNomination(omdbID) {
       Authorization: `Bearer ${getToken()}`
     }
   }
-  return fetch(`${BASE_URL}/nominations/${omdbID}`, options).then(res => res.json());
+  return fetch(`${BASE_URL}/nominations/${btoa(JSON.stringify(movie))}`, options).then(res => res.json());
 
 }
 

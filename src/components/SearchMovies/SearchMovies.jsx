@@ -6,9 +6,9 @@ import './SearchMovies.css'
 export default function SearchMovies(props){
 
     return (
-        <div>
+        <div className="search">
             <div className="search-form">
-            <h1>Search:</h1>
+                <h1>Search:</h1>
                 <form onSubmit={props.searchForMovie}>
                     <input 
                         type="text"

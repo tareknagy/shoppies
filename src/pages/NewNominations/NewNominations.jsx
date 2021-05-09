@@ -15,31 +15,28 @@ export default function NewNominations(props){
     useEffect(function() {
         async function fetchNominations() {
             const nominations = await userAPI.getNominations();
+            for (let i = 0; i < nominations.length; i++) {
+                nominations[i] = atob(nominations[i]);
+            }
             setNominations(nominations);
         }
         fetchNominations();
     }, []);
 
-    async function handleNomination(omdbID, index) {
-        // update search button
-        const moviesNew = movies;
-        moviesNew[index].nominated = !moviesNew[index].nominated
-        setMovies(moviesNew);
-        // update nominations 
-        const nominations = await userAPI.manageUserNomination(omdbID);
+    async function handleNomination(movie, index) {
+        const nominations = await userAPI.manageUserNomination(movie);
+        for (let i = 0; i < nominations.length; i++) {
+            nominations[i] = atob(nominations[i]);
+        }
         setNominations(nominations);
     }
 
-    function searchForMovie(e) {
+    async function searchForMovie(e) {
         e.preventDefault();
         const formatedMovie = inputSearch.replace(/\s+/g, '+');
         fetch(omdbRootUrl + formatedMovie)
             .then(res => res.json())
-            .then(res => {
-                res.Search.map(m => nominations.includes(m.imdbID) ? m.nominated = true : m.nominated = false)
-                return res.Search
-            })
-            .then(res => setMovies(res))
+            .then(res => setMovies(res.Search))
     }
 
     function handleInputChanges(e) {

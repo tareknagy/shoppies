@@ -5,7 +5,7 @@ export default function Landing(props){
     
     function handleClick(e) {
         e.preventDefault();
-        props.enterPage();
+        props.enterPage(e);
     }
 
     return (

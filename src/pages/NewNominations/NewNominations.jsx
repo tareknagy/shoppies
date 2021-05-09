@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Route} from 'react-router-dom';
 import SearchMovies from '../../components/SearchMovies/SearchMovies';
 import Nominations from '../../components/Nominations/Nominations';
+import AuthPage from '../AuthPage/AuthPage';
 import * as userAPI from '../../utilities/user-api';
 import './NewNominations.css';
 
@@ -23,7 +24,7 @@ export default function NewNominations(props){
         fetchNominations();
     }, []);
 
-    async function handleNomination(movie, index) {
+    async function handleNomination(movie) {
         const nominations = await userAPI.manageUserNomination(movie);
         for (let i = 0; i < nominations.length; i++) {
             nominations[i] = atob(nominations[i]);
@@ -31,20 +32,24 @@ export default function NewNominations(props){
         setNominations(nominations);
     }
 
-    async function searchForMovie(e) {
+    async function handleInputChanges(e) {
+        setInputSearch(e.target.value)
         e.preventDefault();
-        const formatedMovie = inputSearch.replace(/\s+/g, '+');
+        const formatedMovie = e.target.value.replace(/\s+/g, '+');
         fetch(omdbRootUrl + formatedMovie)
             .then(res => res.json())
-            .then(res => setMovies(res.Search))
-    }
-
-    function handleInputChanges(e) {
-        setInputSearch(e.target.value);
+            .then(res => {
+                if (res.Search) {
+                    let searchResults = res.Search.slice(0, 4);
+                    setMovies(searchResults)
+                }
+            })
     }
 
     return (
         <>
+        { !props.user ?
+            <>
             <div className="search-movies">
                 <Route exact path="/nominations">
                     <SearchMovies 
@@ -57,7 +62,6 @@ export default function NewNominations(props){
                         inputSearch={inputSearch}
                         setInputSearch={setInputSearch}
                         handleInputChanges={handleInputChanges}
-                        searchForMovie={searchForMovie}
                     />
                 </Route>
             </div>
@@ -71,6 +75,10 @@ export default function NewNominations(props){
                     />
                 </Route>
             </div>
+            </>
+            :
+            <AuthPage setUser={props.setUser} />
+        }
         </>
     );
 }

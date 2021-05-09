@@ -9,14 +9,11 @@ export default function SearchMovies(props){
         <div className="search">
             <div className="search-form">
                 <h1>Search:</h1>
-                <form onSubmit={props.searchForMovie}>
                     <input 
                         type="text"
                         onChange={props.handleInputChanges}
                         value={props.inputSearch}
                         />
-                    <button type="submit">Search</button>
-                </form>
             </div>
 
             <SearchResults 

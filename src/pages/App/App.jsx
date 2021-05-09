@@ -4,7 +4,6 @@ import { getUser } from '../../utilities/user-service';
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import NewNominations from '../NewNominations/NewNominations';
-import Nominations from '../../components/Nominations/Nominations'
 import NavBar from '../../components/NavBar/NavBar';
 import Landing from '../../components/Landing/Landing';
 

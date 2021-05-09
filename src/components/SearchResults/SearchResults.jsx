@@ -2,6 +2,7 @@ import React from 'react';
 import Movie from '../Movie/Movie';
 import './SearchResults.css';
 
+
 export default function SearchResults(props){
     return (
         <div className="search-results">
@@ -17,6 +18,7 @@ export default function SearchResults(props){
                     nominations={props.nominations}
                 />
             )): null}
+            {props.nominations.length >= 5 ? "You've already made 5 nominations!" : ''}
         </div>
     );
 }

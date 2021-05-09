@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { login } from '../../utilities/user-service';
+import '../../pages/AuthPage/AuthPage.css';
 
 export default function LoginForm({ setUser }) {
   const [credentials, setCredentials] = useState({ email: '', password: '' });
@@ -22,12 +23,11 @@ export default function LoginForm({ setUser }) {
 
   return (
     <div>
+      <h1>Login to nominate</h1>
       <div className="form-container" onSubmit={handleSubmit}>
         <form autoComplete="off" >
-          <label>Email</label>
-          <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
-          <label>Password</label>
-          <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
+          <input className="shadow" type="text" name="email" value={credentials.email} onChange={handleChange} placeholder="Enter email.." required /><br />
+          <input className="shadow" type="password" name="password" value={credentials.password} onChange={handleChange} placeholder="Enter password.." required />
           <button type="submit">LOG IN</button>
         </form>
       </div>

@@ -13,19 +13,9 @@ export default function Movie({ movie, index, user, handleNomination, nomination
             <br />
             { movie.Year }
             <br />
-            {/* <button onClick={() => handleNomination(movie.imdbID, index)} disabled={nominations.length >= 5}> */}
-            <button onClick={() => handleNomination(movie, index)} >
-                    {/* { nominations.some(n => n.imdbID === movie.imdbID) ? 'ALREADY NOMINATED' : 'NOMINATE IT' } */}
+            <button onClick={() => handleNomination(movie, index)} disabled={nominations.length >= 5 || checkNomination(movie.imdbID)}>
                     { checkNomination(movie.imdbID) ? 'Nominated' : 'Nominate it!' }
-                    {/* HIT */}
-
             </button>
-            <br />
-            user: { user }
         </div>
     );
 }
-
-// for (let i = 0; i < nominations.length; i++) {
-//     nominations[i] = JSON.parse(atob(nominations[i]));
-// }

@@ -6,3 +6,13 @@
     align-items: center;
     flex-direction: column;
 }
+
+.switch-login {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.form-container {
+    width: 50vmin;
+}

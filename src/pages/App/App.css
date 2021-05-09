@@ -1,12 +1,11 @@
 :root {
   --white: #FFFFFF;
-  --tan-1: #FBF9F6;
-  --tan-2: #E7E2DD;
-  --tan-3: #E2D9D1;
-  --tan-4: #D3C1AE;
-  --orange: #F67F00;
-  --text-light: #968c84;
-  --text-dark: #615954;
+  --black: #000000;
+  --grey-1: #636363;
+  --grey-2: #E5E5E5;
+  --orange: #FF6C00;
+  --text-light: #636363;
+  --text-dark: #000000;
 }
 
 *, *:before, *:after {
@@ -18,14 +17,17 @@ a {
   color: black;
 }
 
+h1 {
+  font-family: 'Opposit';
+  font-weight: normal;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
+  font-family: 'Pangram', 'Helvetica Neue';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tan-4);
+  background-color: var(--grey-2);
   padding: 0;
   height: 100vh;
   overflow-y: hidden;
@@ -114,6 +116,7 @@ input {
   border-radius: .5vmin;
   color: var(--text-dark);
   background-image: none !important; /* prevent lastpass */
+  background-color: var(--grey-2);
   outline: none;
 }
 
@@ -123,10 +126,9 @@ input:focus {
 
 button, a.button {
   padding: 2vmin;
-  color: var(--white);
-  background-color: var(--orange);
-  font-size: 2vmin;
-  font-weight: bold;
+  color: var(--orange);
+  background-color: var(--grey-2);
+  font-size: 2.5vmin;
   text-decoration: none;
   text-align: center;
   border: .1vmin solid var(--tan-2);
@@ -146,8 +148,9 @@ button.btn-xs {
 }
 
 button:disabled, form:invalid button[type="submit"] {
+  color: var(--grey-1);
   cursor: not-allowed;
-  background-color: var(--tan-4);
+  background-color: var(--grey-2);
 }
 
 button[type="submit"] {

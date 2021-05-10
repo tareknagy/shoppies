@@ -20,10 +20,9 @@ Find the live demo here: [theshoppies.xyz](http://www.theshoppies.xyz/).
 
 ## Next Steps / Future Enhancements
 
-- Create mobile compatible version.
-- Add animations to react components.
 - Display movie poster on title hover over.
 - Fix API call so it hides the key (aka runs on the backend).
+- Refactor to add nominations Schema (see Quirks and Details), then create component to show summary of most nominated movies.
 
 ## Quirks and Details
 

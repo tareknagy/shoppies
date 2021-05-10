@@ -10,10 +10,8 @@ export default function Landing(props){
 
     return (
     <div className="landing">
-        <div>
-        <h1>Welcome to the Shoppies!</h1><br />
-        <a href="#" onClick={handleClick}><h2>Nominate the next winner! click here.</h2></a>
-        </div>
+        <h1>Welcome to the Shoppies!</h1>
+        <a href="#" onClick={handleClick}><h2>Nominate the next winner!</h2></a>
     </div>
     )
 }

@@ -23,3 +23,16 @@
     overflow: auto;
     border-left: .1vmin solid var(--white);
 }
+
+
+@media screen and (max-width: 900px) {
+    .search-movies {
+        width: 100vw;
+        height: 50vh;
+    }
+
+    .my-nominations {
+        width: 100vw;
+        height: 50vh;
+    }
+}

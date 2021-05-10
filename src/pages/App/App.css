@@ -22,6 +22,10 @@ h1 {
   font-weight: normal;
 }
 
+h2 {
+  font-weight: normal;
+}
+
 body {
   margin: 0;
   font-family: 'Pangram', 'Helvetica Neue';
@@ -203,12 +207,6 @@ button[type="submit"] {
   padding: 4px;
 }
 
-
-
-
-
-
-
 #container {
   display: flex;
   height: 100vh;
@@ -217,4 +215,33 @@ button[type="submit"] {
   /* left: 0; */
   right: 0;
   transition: 1000ms ease;
+}
+
+@media screen and (max-width: 900px) {
+
+  body {
+    overflow-y: auto;
+    font-size: 3vmin;
+  }
+
+  .search-input {
+    font-size: 3vmin;
+  }
+
+  #container {
+    flex-direction: column;
+    height: 200vh;
+    width: 100vw;
+    position: relative;
+  }
+
+  .search-input {
+    width: 80vw;
+  }
+
+  .movie-container {
+    width: 70vw;
+  }
+
+
 }

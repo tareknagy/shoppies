@@ -8,7 +8,7 @@ Find the live demo here: [theshoppies.xyz](http://www.theshoppies.xyz/).
 
 ## Screenshots
 
-- Coming soon...
+![Sign Up Page]('./public/images/ss-signup.png')
 
 ## Technologies Used
 

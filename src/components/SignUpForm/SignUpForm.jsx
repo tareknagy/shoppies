@@ -25,7 +25,7 @@ export default class SignUpForm extends Component {
             const user = await signUp(formData);
             this.props.setUser(user);
         } catch {
-            this.setState({ error: 'Sign Up Failed - Try Again' })
+            this.setState({ error: 'Sign Up Failed - password must be at least 3 characters long!' })
         } 
     };
     

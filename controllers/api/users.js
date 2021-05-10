@@ -44,7 +44,6 @@ async function login(req, res) {
 async function manageNominations(req, res) {
   const user = await User.getUser(req.user._id);
   const movie = req.params.movie;
-  // user.nominations =[];
   // Delete if there, prevent more than 5.
   if (user.nominations.indexOf(movie) > -1) {
     user.nominations.splice(user.nominations.indexOf(movie), 1);

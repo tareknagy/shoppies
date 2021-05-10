@@ -31,18 +31,6 @@ export function manageUserNomination(movie) {
 
 }
 
-// export function updateUser() {
-//   const
-//   return sendRequest(`${BASE_URL}/nominate`, 'PUT');
-// }
-
-// Functions
-
-// testing purposes only
-// export function checkToken() {
-//   return sendRequest(`${BASE_URL}/check-token`);
-// }
-
 async function sendRequest(url, method = 'GET', payload = null) {
   const options = { method };
   if (payload) {

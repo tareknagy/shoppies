@@ -4,7 +4,7 @@ This project was created for the Shopify Web Developer Intern Challenge - Fall 2
 
 ## Getting Started
 
-Find the live demo here: [theshoppies.xyz](http://theshoppies.xyz).
+Find the live demo here: [theshoppies.xyz](http://www.theshoppies.xyz/).
 
 ## Screenshots
 

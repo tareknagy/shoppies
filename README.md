@@ -4,7 +4,7 @@ This project was created for the Shopify Web Developer Intern Challenge - Fall 2
 
 ## Getting Started
 
-Find the live demo here: [theshoppies.xyz](theshoppies.xyz).
+Find the live demo here: [theshoppies.xyz](http://theshoppies.xyz).
 
 ## Screenshots
 
@@ -20,7 +20,7 @@ Find the live demo here: [theshoppies.xyz](theshoppies.xyz).
 
 ## Next Steps / Future Enhancements
 
-- Create mobile comatible version.
+- Create mobile compatible version.
 - Add animations to react components.
 - Display movie poster on title hover over.
 - Fix API call so it hides the key (aka runs on the backend).
@@ -32,4 +32,4 @@ Find the live demo here: [theshoppies.xyz](theshoppies.xyz).
 
 ## Get in touch
 
-[tareknagy.com](tareknagy.com)
+[tareknagy.com](https://tareknagy.com)

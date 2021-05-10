@@ -1,6 +1,12 @@
 .search {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 40vw;
+    grid-template-rows: repeat(6, 40px);
+}
+
+
+@media screen and (max-width: 900px) {
+    .search {
+        grid-template-columns: 70vw;
+    }
 }

@@ -27,6 +27,8 @@ export default function SearchMovies(props){
                     setNominations={props.setNominations}
                     nominations={props.nominations}
                 />
+                            {props.nominations.length >= 5 ? <div style={{fontSize: '2vmin', textAlign: 'center',  justifySelf: 'center'}}>You've already made 5 nominations!</div> : ''}
+
             </div>
         </>
     );

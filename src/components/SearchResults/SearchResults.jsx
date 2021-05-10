@@ -6,7 +6,7 @@ import './SearchResults.css';
 export default function SearchResults(props){
     return (
         <>
-            <div>
+            <>
                 {props.movies ? props.movies.map((movie, index) => (
                     <Movie 
                         movie={movie} 
@@ -19,9 +19,7 @@ export default function SearchResults(props){
                         nominations={props.nominations}
                     />
                 )): null}
-            </div>
-            
-            {props.nominations.length >= 5 ? <div style={{fontSize: '2vmin'}}>You've already made 5 nominations!</div> : ''}
+            </>            
             
         </>
     );

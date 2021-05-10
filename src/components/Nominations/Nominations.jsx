@@ -5,7 +5,7 @@ export default function Nominations({ user, nominations, handleNomination }){
     return (
     <>
         <h1>Your Nominations</h1>
-        <div className="search-results">
+        <div className="search">
             {nominations ? nominations.map((movie, index) => (
                 <div className="movie-container movie-container-your-nominations shadow">
                     <div>
@@ -21,8 +21,8 @@ export default function Nominations({ user, nominations, handleNomination }){
                     </button>
                 </div>
             )): null}
+        <div style={{fontSize: '2vmin', textAlign: 'center', justifySelf: 'center'}}>Nominate up to 5 movies</div>
         </div>
-        <div style={{fontSize: '2vmin'}}>Nominate up to 5 movies</div>
     </>
     )
 }

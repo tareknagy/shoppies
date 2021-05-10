@@ -6,8 +6,6 @@ import AuthPage from '../AuthPage/AuthPage';
 import * as userAPI from '../../utilities/user-api';
 import './NewNominations.css';
 
-const omdbRootUrl = `http://www.omdbapi.com/?apikey=d6b95458&type=movie&s=`;
-
 export default function NewNominations(props){
     const [nominations, setNominations] = useState([]);
     const [movies, setMovies] = useState([]);
@@ -36,7 +34,7 @@ export default function NewNominations(props){
         setInputSearch(e.target.value)
         e.preventDefault();
         const formatedMovie = e.target.value.replace(/\s+/g, '+');
-        fetch(omdbRootUrl + formatedMovie)
+        fetch(process.env.REACT_APP_OMDB_TOKEN + formatedMovie)
             .then(res => res.json())
             .then(res => {
                 if (res.Search) {

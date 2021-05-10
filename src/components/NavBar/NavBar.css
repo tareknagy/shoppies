@@ -4,3 +4,9 @@ nav {
     right: 10px;
     z-index: 1;
 }
+
+@media screen and (max-width: 900px) {
+    nav {
+        font-size: 4vmin;
+    }
+}

@@ -10,6 +10,10 @@ Find the live demo here: [theshoppies.xyz](http://www.theshoppies.xyz/).
 
 ![Sign Up Page](https://github.com/tareknagy/shoppies/blob/master/public/images/ss-signup.png?raw=true)
 
+![Login Page](https://github.com/tareknagy/shoppies/blob/master/public/images/ss-login.png?raw=true)
+
+![Nomination Page](https://github.com/tareknagy/shoppies/blob/master/public/images/ss-nominate.png?raw=true)
+
 ## Technologies Used
 
 - Mongoose / MongoDB to store user and nomination data.

@@ -22,8 +22,17 @@ h1 {
   font-weight: normal;
 }
 
+title {
+  display: inline;
+  font-family: 'Opposit';
+  font-weight: normal;
+  font-size: 7vw;
+}
+
 h2 {
   font-weight: normal;
+  font-size: max(3vw, 1.5em);
+  margin-top: 30px;
 }
 
 body {
@@ -32,7 +41,14 @@ body {
   font-size: 1.5vmin;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--grey-2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../../images/background-noise.png');
+  background-color: rgba(0, 0, 0, 0.1);
+  animation: .2s infinite noise;
   padding: 0;
   height: 100vh;
   overflow-y: hidden;
@@ -132,7 +148,7 @@ input:focus {
 button, a.button {
   padding: 2vmin;
   color: var(--orange);
-  background-color: var(--grey-2);
+  background-color: transparent;
   font-size: 2.5vmin;
   text-decoration: none;
   text-align: center;
@@ -155,11 +171,11 @@ button.btn-xs {
 button:disabled, form:invalid button[type="submit"] {
   color: var(--grey-1);
   cursor: not-allowed;
-  background-color: var(--grey-2);
+  background-color: transparent;
 }
 
 button.btn-sm:disabled {
-  color: var(--white);
+  color: var(--grey-1);
 }
 
 button[type="submit"] {
@@ -175,10 +191,18 @@ button[type="submit"] {
   border-radius: .7vmin;
   margin-bottom: 10px;
   padding: 5px;
+  transition: all .2s ease-in-out;
 }
 
 .movie-container-your-nominations {
   background-color: var(--orange);
+}
+
+.movie-container-your-nominations:hover {
+  transform: scale(1.03);
+  --webkit-transform: scale(1.03, 1.03);
+  transition: ease 500ms;
+  cursor: pointer;
 }
 
 .movie-container-search {
@@ -187,6 +211,13 @@ button[type="submit"] {
 
 .movie-container-search-results {
   background-color: var(--white);
+}
+
+.movie-container-search-results:hover {
+  transform: scale(1.03);
+  --webkit-transform: scale(1.03, 1.03);
+  transition: ease 500ms;
+  cursor: pointer;
 }
 
 .movie-date {
@@ -212,15 +243,20 @@ button[type="submit"] {
   height: 100vh;
   width: 200vw;
   position: fixed;
-  /* left: 0; */
-  right: 0;
   transition: 1000ms ease;
+}
+
+.container-intro {
+  left: 0;
+}
+
+.container-enter {
+  left: -100vw;
 }
 
 @media screen and (max-width: 900px) {
 
   body {
-    overflow-y: auto;
     font-size: 3vmin;
   }
 
@@ -232,7 +268,16 @@ button[type="submit"] {
     flex-direction: column;
     height: 200vh;
     width: 100vw;
-    position: relative;
+  }
+
+  .container-intro {
+    left:0;
+    top: 0;
+  }
+  
+  .container-enter {
+    left:0;
+    top: -100vh;
   }
 
   .search-input {
@@ -254,4 +299,84 @@ button[type="submit"] {
   }
 
 
+}
+
+
+
+
+@keyframes noise {
+  0%, 100% {
+    background-position: 0 0;
+  }
+  10% {
+    background-position: -5% -10%;
+  }
+  20% {
+    background-position: -15% 5%;
+  }
+  30% {
+    background-position: 7% -25%;
+  }
+  40% {
+    background-position: 20% 25%;
+  }
+  50% {
+    background-position: -25% 10%;
+  }
+  60% {
+    background-position: 15% 5%;
+  }
+  70% {
+    background-position: 0% 15%;
+  }
+  80% {
+    background-position: 25% 35%;
+  }
+  90% {
+    background-position: -10% 10%;
+  }
+}
+
+.fade-in {
+  -webkit-animation: fade-in 500ms ease-in-out;
+  animation: fade-in 500ms ease-in-out;
+}
+
+@-webkit-keyframes fade-in {
+  0%   { opacity: 0; }
+  100% { opacity: .9; }
+}
+@-moz-keyframes fade-in {
+  0%   { opacity: 0; }
+  100% { opacity: .9; }
+}
+@-o-keyframes fade-in {
+  0%   { opacity: 0; }
+  100% { opacity: .9; }
+}
+@keyframes fade-in {
+  0%   { opacity: 0; }
+  100% { opacity: .9; }
+}
+
+.fade-out {
+  -webkit-animation: fade-out 500ms ease-in-out;
+  animation: fade-out 500ms ease-in-out;
+}
+
+@-webkit-keyframes fade-out {
+  0% { opacity: .9; }
+  100%   { opacity: 0; }
+}
+@-moz-keyframes fade-out {
+  0% { opacity: .9; }
+  100%   { opacity: 0; }
+}
+@-o-keyframes fade-out {
+  0% { opacity: .9; }
+  100%   { opacity: 0; }
+}
+@keyframes fade-out {
+  0% { opacity: .9; }
+  100%   { opacity: 0; }
 }

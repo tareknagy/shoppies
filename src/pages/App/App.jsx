@@ -10,10 +10,10 @@ import Landing from '../../components/Landing/Landing';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
+  const [enter, setEnter] = useState(false);
 
-  function enterPage(e) {
-    // style={{right:0}}
-    console.log(e)
+  function enterPage() {
+    setEnter(!enter);
   }
 
   return (
@@ -22,7 +22,7 @@ export default function App() {
         <>
           <NavBar user={user} setUser={setUser} />
             <Switch>
-              <div id="container" >
+              <div id="container" className={enter ? 'container-enter' : 'container-intro'}>
                 <Route path="/nominations">
                   <Landing enterPage={enterPage} />
                   <NewNominations user={user} setUser={setUser} />

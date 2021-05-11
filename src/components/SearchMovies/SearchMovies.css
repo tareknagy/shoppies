@@ -1,13 +1,13 @@
 .search {
     display: grid;
     grid-template-columns: 40vw;
-    grid-template-rows: repeat(6, 5vmin);
+    grid-template-rows: repeat(6, 7vh);
 }
 
 
 @media screen and (max-width: 900px) {
     .search {
         grid-template-columns: 70vw;
-        grid-template-rows: repeat(6, 10vmin);
+        grid-template-rows: repeat(6, 5.5vh);
     }
 }

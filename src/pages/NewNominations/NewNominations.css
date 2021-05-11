@@ -6,7 +6,6 @@
     height: 100vh;
     width: 50vw;
     padding: 10px;
-    background-color: var(--grey-2);
     overflow: auto;
     border-right: .1vmin solid var(--white);
 }
@@ -19,7 +18,6 @@
     height: 100vh;
     width: 50vw;
     padding: 10px;
-    background-color: var(--grey-2);
     overflow: auto;
     border-left: .1vmin solid var(--white);
 }

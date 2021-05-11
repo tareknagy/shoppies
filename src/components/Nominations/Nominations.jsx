@@ -7,7 +7,10 @@ export default function Nominations({ user, nominations, handleNomination }){
         <h1>Your Nominations</h1>
         <div className="search">
             {nominations ? nominations.map((movie, index) => (
-                <div className="movie-container movie-container-your-nominations shadow">
+                <div 
+                    className="movie-container movie-container-your-nominations shadow"
+                    onClick={() => handleNomination(JSON.parse(movie), index)}
+                >
                     <div>
                         <span>
                             { JSON.parse(movie).Title } &nbsp;
@@ -16,7 +19,7 @@ export default function Nominations({ user, nominations, handleNomination }){
                             { JSON.parse(movie).Year }
                         </span>
                     </div>
-                    <button className="btn-sm" onClick={() => handleNomination(JSON.parse(movie), index)}>
+                    <button className="btn-sm" style={{color: 'var(--grey-1)'}} onClick={() => handleNomination(JSON.parse(movie), index)}>
                         Remove
                     </button>
                 </div>

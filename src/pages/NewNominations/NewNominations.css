@@ -1,3 +1,5 @@
+
+
 .search-movies {
     display: flex;
     justify-content: center;
@@ -8,6 +10,9 @@
     padding: 10px;
     overflow: auto;
     border-right: .1vmin solid var(--white);
+    background: linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.9)), url('../../images/landing-noise.png');
+    animation: .2s infinite noise;
+    padding: 0;
 }
 
 .my-nominations {
@@ -20,6 +25,9 @@
     padding: 10px;
     overflow: auto;
     border-left: .1vmin solid var(--white);
+    background: linear-gradient(rgba(255,255,255,.91), rgba(255,255,255,.91)), url('../../images/landing-noise.png');
+    animation: .2s infinite noise;
+    padding: 0;
 }
 
 

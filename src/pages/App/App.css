@@ -192,7 +192,7 @@ button[type="submit"] {
   width: 40vw;
   border-radius: .7vmin;
   margin-bottom: 10px;
-  padding: 1px 0 1px 5px;
+  padding: 1px 0 1px 1px;
   transition: all .2s ease-in-out;
 }
 
@@ -213,6 +213,7 @@ button[type="submit"] {
 
 .movie-container-search-results {
   background-color: var(--white);
+  padding: 1px 0 1px 5px;
 }
 
 .movie-container-search-results:hover {
@@ -386,17 +387,17 @@ button[type="submit"] {
 
 @-webkit-keyframes fade-out {
   0% { opacity: .9; }
-  100%   { opacity: 0; }
+  100%   { opacity: .1; }
 }
 @-moz-keyframes fade-out {
   0% { opacity: .9; }
-  100%   { opacity: 0; }
+  100%   { opacity: .1; }
 }
 @-o-keyframes fade-out {
   0% { opacity: .9; }
-  100%   { opacity: 0; }
+  100%   { opacity: .1; }
 }
 @keyframes fade-out {
   0% { opacity: .9; }
-  100%   { opacity: 0; }
+  100%   { opacity: .1; }
 }

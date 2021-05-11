@@ -3,7 +3,8 @@
     height: 100vh;
     position: flex;
     background: url('../../images/landing-noise.png');
-    animation: .2s infinite noise;
+    animation: .2s infinite noise, 1s ease-in-out fade-out 2s;
+    animation-fill-mode: forwards;  
     padding: 0;
     height: 100vh;
     overflow-y: hidden;

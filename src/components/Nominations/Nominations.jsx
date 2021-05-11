@@ -11,17 +11,11 @@ export default function Nominations({ user, nominations, handleNomination }){
                     className="movie-container movie-container-your-nominations shadow"
                     onClick={() => handleNomination(JSON.parse(movie), index)}
                 >
-                    <div>
-                        <span>
-                            { JSON.parse(movie).Title } &nbsp;
-                        </span>
-                        <span className="movie-date">
-                            { JSON.parse(movie).Year }
-                        </span>
+                    <div className="movie-container-desc">
+                        <div className="movie-title">{ JSON.parse(movie).Title } &nbsp;</div>
+                        <span className="movie-date">{ JSON.parse(movie).Year }</span>
                     </div>
-                    <button className="btn-sm" style={{color: 'var(--grey-1)'}} onClick={() => handleNomination(JSON.parse(movie), index)}>
-                        Remove
-                    </button>
+                    <button className="btn-sm" style={{color: 'var(--grey-1)'}} onClick={() => handleNomination(JSON.parse(movie), index)}>Remove</button>
                 </div>
             )): null}
         <div style={{fontSize: '2vmin', textAlign: 'center', justifySelf: 'center'}}>Nominate up to 5 movies</div>

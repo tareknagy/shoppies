@@ -12,11 +12,11 @@ export default function Movie({ movie, index, user, handleNomination, nomination
             className="movie-container movie-container-search-results shadow"
             onClick={() => handleNomination(movie, index)}
         >
-            <div>
-                <span>{ movie.Title }</span>  &nbsp;
-                <span className="movie-date">{ movie.Year }</span>
+            <div className="movie-container-desc">
+                <div className="movie-title">{ movie.Title }</div>  &nbsp;
+                <div className="movie-date">{ movie.Year }</div>
             </div>
-            { checkNomination(movie.imdbID) ? <button className="btn-sm" style={{color: 'var(--grey-1)'}}>Nominated</button> : <button className="btn-sm">Nominate it!</button>}
+            { checkNomination(movie.imdbID) ? <button className="btn-sm" style={{color: 'var(--grey-1)'}}>Remove</button> : <button className="btn-sm">Add</button>}
         </div>
     );
 }

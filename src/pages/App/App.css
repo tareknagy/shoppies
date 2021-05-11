@@ -38,7 +38,7 @@ h2 {
 body {
   margin: 0;
   font-family: 'Pangram', 'Helvetica Neue';
-  font-size: 1.5vmin;
+  font-size: 2vmin;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: absolute;
@@ -159,8 +159,9 @@ button, a.button {
 }
 
 button.btn-sm {
-  font-size: 1.5vmin;
+  font-size: 2vmin;
   padding: .6vmin .7vmin;
+  min-width: 0;
 }
 
 button.btn-xs {
@@ -185,12 +186,13 @@ button[type="submit"] {
 
 .movie-container {
   display: flex;
+  flex: 1;
   justify-content: space-between;
   align-items: center;
   width: 40vw;
   border-radius: .7vmin;
   margin-bottom: 10px;
-  padding: 5px;
+  padding: 1px 0 1px 5px;
   transition: all .2s ease-in-out;
 }
 
@@ -220,7 +222,21 @@ button[type="submit"] {
   cursor: pointer;
 }
 
+.movie-container-desc{
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.movie-title{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 25vw;
+}
+
 .movie-date {
+  white-space: nowrap;
   color: var(--grey-1);
 }
 
@@ -257,11 +273,11 @@ button[type="submit"] {
 @media screen and (max-width: 900px) {
 
   body {
-    font-size: 3vmin;
+    font-size: 4vmin;
   }
 
   .search-input {
-    font-size: 3vmin;
+    font-size: 4vmin;
   }
 
   #container {
@@ -286,6 +302,10 @@ button[type="submit"] {
 
   .movie-container {
     width: 70vw;
+  }
+
+  .movie-title{
+    max-width: 50vw;
   }
 
   input {
@@ -338,8 +358,8 @@ button[type="submit"] {
 }
 
 .fade-in {
-  -webkit-animation: fade-in 500ms ease-in-out;
-  animation: fade-in 500ms ease-in-out;
+  -webkit-animation: fade-in 1000ms ease-in-out;
+  animation: fade-in 1000ms ease-in-out;
 }
 
 @-webkit-keyframes fade-in {
@@ -360,8 +380,8 @@ button[type="submit"] {
 }
 
 .fade-out {
-  -webkit-animation: fade-out 500ms ease-in-out;
-  animation: fade-out 500ms ease-in-out;
+  -webkit-animation: fade-out 600ms ease-in-out;
+  animation: fade-out 00ms ease-in-out;
 }
 
 @-webkit-keyframes fade-out {

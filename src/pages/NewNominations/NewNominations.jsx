@@ -3,6 +3,7 @@ import {Route} from 'react-router-dom';
 import SearchMovies from '../../components/SearchMovies/SearchMovies';
 import Nominations from '../../components/Nominations/Nominations';
 import AuthPage from '../AuthPage/AuthPage';
+import Thumbnail from '../../components/Thumbnail/Thumbnail'
 import * as userAPI from '../../utilities/user-api';
 import './NewNominations.css';
 
@@ -10,6 +11,7 @@ export default function NewNominations(props){
     const [nominations, setNominations] = useState([]);
     const [movies, setMovies] = useState([]);
     const [inputSearch, setInputSearch] = useState('');
+    const [thumbnail, setThumbnail] = useState({from: null, url: null});
     
     useEffect(function() {
         async function fetchNominations() {
@@ -48,31 +50,39 @@ export default function NewNominations(props){
         <>
         { props.user ?
             <>
-            <div className="search-movies">
                 <Route exact path="/nominations">
-                    <SearchMovies 
-                        user={props.user._id} 
-                        nominations={nominations} 
-                        handleNomination={handleNomination}
-                        setNominations={setNominations}
-                        movies={movies}
-                        setMovies={setMovies}
-                        inputSearch={inputSearch}
-                        setInputSearch={setInputSearch}
-                        handleInputChanges={handleInputChanges}
-                    />
+                    <div className="search-movies fade-in">
+                        {thumbnail.from === 'nomination' ?
+                            <Thumbnail thumbnail={thumbnail} />
+                        :
+                            <SearchMovies 
+                                user={props.user._id} 
+                                nominations={nominations} 
+                                handleNomination={handleNomination}
+                                setNominations={setNominations}
+                                movies={movies}
+                                setMovies={setMovies}
+                                inputSearch={inputSearch}
+                                setInputSearch={setInputSearch}
+                                handleInputChanges={handleInputChanges}
+                                setThumbnail={setThumbnail}
+                                />
+                        }
+                    </div>
+                    <div className="my-nominations fade-in">
+                        {thumbnail.from === 'search' ?
+                            <Thumbnail thumbnail={thumbnail} />
+                        :
+                            <Nominations 
+                                user={props.user._id} 
+                                nominations={nominations} 
+                                handleNomination={handleNomination}
+                                setNominations={setNominations}
+                                setThumbnail={setThumbnail}
+                            />
+                        }
+                    </div>
                 </Route>
-            </div>
-            <div className="my-nominations">
-                <Route exact path="/nominations">
-                    <Nominations 
-                        user={props.user._id} 
-                        nominations={nominations} 
-                        handleNomination={handleNomination}
-                        setNominations={setNominations}
-                    />
-                </Route>
-            </div>
             </>
             :
             <AuthPage setUser={props.setUser} />

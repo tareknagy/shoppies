@@ -26,6 +26,7 @@ export default function SearchMovies(props){
                     handleNomination={props.handleNomination}
                     setNominations={props.setNominations}
                     nominations={props.nominations}
+                    setThumbnail={props.setThumbnail}
                 />
                 {props.nominations.length >= 5 ? <div style={{fontSize: '2vmin', textAlign: 'center',  justifySelf: 'center'}}>That's 5! To switch a nomination, remove one first.</div> : ''}
 

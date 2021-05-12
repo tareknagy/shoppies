@@ -271,6 +271,21 @@ button[type="submit"] {
   left: -100vw;
 }
 
+.thumbnail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  width: 90%;
+  margin: 20px;
+}
+
+.thumbnail > img {
+  object-fit: contain;
+  height: 90%;
+  max-width: 90%;
+}
+
 @media screen and (max-width: 900px) {
 
   body {
@@ -318,11 +333,25 @@ button[type="submit"] {
     padding: 3vmin;
     font-size: 4.5vmin;
   }
-
-
 }
 
+.movie-fade-enter {
+  opacity: 0.01;
+}
 
+.movie-fade-enter.movie-fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.movie-fade-leave {
+  opacity: 1;
+}
+
+.movie-fade-leave.movie-fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
 
 
 @keyframes noise {
@@ -356,6 +385,11 @@ button[type="submit"] {
   90% {
     background-position: -10% 10%;
   }
+}
+
+.fade-in-thumbnail {
+  -webkit-animation: fade-in 500ms ease-in-out;
+  animation: fade-in 500ms ease-in-out;
 }
 
 .fade-in {

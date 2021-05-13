@@ -51,7 +51,7 @@ export default function NewNominations(props){
         { props.user ?
             <>
                 <Route exact path="/nominations">
-                    <div className="search-movies fade-in">
+                    <div className="search-movies">
                         {thumbnail.from === 'nomination' ?
                             <Thumbnail thumbnail={thumbnail} />
                         :
@@ -69,7 +69,7 @@ export default function NewNominations(props){
                                 />
                         }
                     </div>
-                    <div className="my-nominations fade-in">
+                    <div className="my-nominations">
                         {thumbnail.from === 'search' ?
                             <Thumbnail thumbnail={thumbnail} />
                         :

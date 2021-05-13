@@ -197,7 +197,7 @@ button[type="submit"] {
 
 .movie-container-your-nominations {
   background-color: var(--orange);
-  padding: 1px 0 1px 5px;
+  padding: 1px 0 1px 10px;
 }
 
 .movie-container-your-nominations:hover {
@@ -213,7 +213,7 @@ button[type="submit"] {
 
 .movie-container-search-results {
   background-color: var(--white);
-  padding: 1px 0 1px 5px;
+  padding: 1px 0 1px 10px;
 }
 
 .movie-container-search-results:hover {
@@ -252,7 +252,7 @@ button[type="submit"] {
   background-image: none !important; /* prevent lastpass */
   background-color: var(--grey-2);
   outline: none;
-  padding: 4px;
+  padding: 1px 1px 1px 10px;
 }
 
 #container {
@@ -278,6 +278,7 @@ button[type="submit"] {
   height: 80%;
   width: 90%;
   margin: 20px;
+  z-index: 1;
 }
 
 .thumbnail > img {
@@ -335,20 +336,20 @@ button[type="submit"] {
   }
 }
 
-.movie-fade-enter {
+.movieFade-enter {
   opacity: 0.01;
 }
 
-.movie-fade-enter.movie-fade-enter-active {
+.movieFade-enter.movie-fade-enter-active {
   opacity: 1;
   transition: opacity 300ms ease-in;
 }
 
-.movie-fade-leave {
+.movieFade-leave {
   opacity: 1;
 }
 
-.movie-fade-leave.movie-fade-leave-active {
+.movieFade-leave.movie-fade-leave-active {
   opacity: 0.01;
   transition: opacity 300ms ease-in;
 }

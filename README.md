@@ -8,11 +8,15 @@ Find the live demo here: [theshoppies.xyz](http://www.theshoppies.xyz/).
 
 ## Screenshots
 
+![Landing](https://github.com/tareknagy/shoppies/blob/master/public/images/ss-intro.png?raw=true)
+
 ![Sign Up Page](https://github.com/tareknagy/shoppies/blob/master/public/images/ss-signup.png?raw=true)
 
 ![Login Page](https://github.com/tareknagy/shoppies/blob/master/public/images/ss-login.png?raw=true)
 
 ![Nomination Page](https://github.com/tareknagy/shoppies/blob/master/public/images/ss-nominate.png?raw=true)
+
+![Nomination Page](https://github.com/tareknagy/shoppies/blob/master/public/images/ss-hover.png?raw=true)
 
 ## Technologies Used
 
@@ -24,7 +28,7 @@ Find the live demo here: [theshoppies.xyz](http://www.theshoppies.xyz/).
 
 ## Next Steps / Future Enhancements
 
-- Display movie poster on title hover over.
+- Add OAuth.
 - Refactor to add nominations Schema (see Quirks and Details), then create component to show summary of most nominated movies.
 
 ## Quirks and Details

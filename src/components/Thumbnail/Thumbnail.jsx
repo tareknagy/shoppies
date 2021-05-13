@@ -1,11 +1,11 @@
 import React from 'react';
-import CSSTransition from 'react-transition-group';
 
 export default function Thumbnail({ thumbnail }){
 
     return (
         <>
-            <div className="thumbnail">
+            <div className="thumbnail in-thumbnail">
+                <div className="thumbnail-exit">x</div>
                 <img className="fade-in-thumbnail" src={thumbnail.url} alt="" />
             </div>
         </>

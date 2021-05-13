@@ -273,6 +273,7 @@ button[type="submit"] {
 }
 
 .thumbnail {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -286,6 +287,15 @@ button[type="submit"] {
   object-fit: contain;
   height: 90%;
   max-width: 90%;
+}
+
+.thumbnail-exit {
+  display: none;
+  position: absolute;
+  color: var(--orange);
+  font-size: 20pt;
+  right: 0;
+  top: 0;
 }
 
 @media screen and (max-width: 900px) {
@@ -334,6 +344,10 @@ button[type="submit"] {
   button, a.button {
     padding: 3vmin;
     font-size: 4.5vmin;
+  }
+
+  .thumbnail-exit {
+    display: inline;
   }
 }
 
@@ -389,9 +403,9 @@ button[type="submit"] {
   }
 }
 
-.fade-in-thumbnail {
-  -webkit-animation: fade-in 500ms ease-in-out;
-  animation: fade-in 500ms ease-in-out;
+.in-thumbnail {
+  -webkit-animation: fade-in 200ms ease-in-out;
+  animation: fade-in 200ms ease-in-out;
 }
 
 .fade-in {

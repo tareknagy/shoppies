@@ -21,8 +21,6 @@ export default function Movie({ movie, index, user, handleNomination, nomination
                     onClick={() => handleNomination(movie, index)}
                     onMouseEnter={() => handleThumbnail(movie.Poster)}
                     onMouseLeave={() => handleThumbnail(null)}
-                    onTouchStart={() => handleThumbnail(movie.Poster)}
-                    onTouchEnd={() => handleThumbnail(null)}
                 >
                     <div className="movie-container-desc">
                         <div className="movie-title">{ movie.Title }</div>  &nbsp;

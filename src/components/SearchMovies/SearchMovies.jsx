@@ -6,7 +6,7 @@ import './SearchMovies.css'
 export default function SearchMovies(props){
 
     return (
-        <>
+        <div className="fade-in">
             <h1>Find Movies</h1>
             <div className="search">
                 <div className="movie-container shadow">
@@ -31,6 +31,6 @@ export default function SearchMovies(props){
                 {props.nominations.length >= 5 ? <div style={{fontSize: '2vmin', textAlign: 'center',  justifySelf: 'center'}}>That's 5! To switch a nomination, remove one first.</div> : ''}
 
             </div>
-        </>
+        </div>
     );
 }

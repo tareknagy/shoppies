@@ -1,6 +1,7 @@
 
 
 .search-movies {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,6 +17,7 @@
 }
 
 .my-nominations {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,13 +38,11 @@
         width: 100vw;
         height: 50vh;
         border-right: 0px;
-        border-bottom: .1vmin solid var(--white);
     }
 
     .my-nominations {
         width: 100vw;
         height: 50vh;
         border-left: 0px;
-        border-top: .1vmin solid var(--white);
     }
 }

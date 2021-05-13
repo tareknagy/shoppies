@@ -17,7 +17,7 @@ export default function Movie({ movie, index, user, handleNomination, nomination
     return (
         <>
                 <div 
-                    className="movie-container movie-container-search-results fade-in"
+                    className="movie-container movie-container-search-results"
                     onClick={() => handleNomination(movie, index)}
                     onMouseEnter={() => handleThumbnail(movie.Poster)}
                     onMouseLeave={() => handleThumbnail(null)}

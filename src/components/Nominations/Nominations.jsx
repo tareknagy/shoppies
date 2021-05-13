@@ -11,7 +11,7 @@ export default function Nominations({ user, nominations, handleNomination, setTh
     }
 
     return (
-    <>
+    <div className="fade-in">
         <h1>Your Nominations</h1>
         <div className="search">
             {nominations ? nominations.map((movie, index) => (
@@ -33,6 +33,6 @@ export default function Nominations({ user, nominations, handleNomination, setTh
             )): null}
         <div style={{fontSize: '2vmin', textAlign: 'center', justifySelf: 'center'}}>Nominate up to 5 movies</div>
         </div>
-    </>
+    </div>
     )
 }

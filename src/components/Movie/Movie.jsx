@@ -1,4 +1,5 @@
 import React from 'react';
+import noThumbnail from '../../images/no-poster.png';
 
 export default function Movie({ movie, index, user, handleNomination, nominations, setNominations, setThumbnail }){
 
@@ -8,9 +9,11 @@ export default function Movie({ movie, index, user, handleNomination, nomination
     }
 
     function handleThumbnail(poster) {
-        // if null, clear thumbnail, otherwise, assign source of change and Poster url
         let currentTn;
+        // if null, clear thumbnail, otherwise, assign source of change and Poster url
         poster ? currentTn = {from: 'search', url: poster} : currentTn = {from: null, url:null};
+        // if poster is N/A, add placeholder.
+        currentTn.url === 'N/A' && (currentTn.url = noThumbnail);
         setThumbnail(currentTn);
     }
 

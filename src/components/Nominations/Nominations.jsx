@@ -1,12 +1,15 @@
 import React from 'react';
 import '../SearchResults/SearchResults.css';
+import noThumbnail from '../../images/no-poster.png';
 
 export default function Nominations({ user, nominations, handleNomination, setThumbnail }){
     
     function handleThumbnail(poster) {
-        // if null, clear thumbnail, otherwise, assign source of change and Poster url
         let currentTn;
+        // if null, clear thumbnail, otherwise, assign source and change and Poster url
         poster ? currentTn = {from: 'nomination', url: poster} : currentTn = {from: null, url:null};
+        // if poster is N/A, add placeholder.
+        currentTn.url === 'N/A' && (currentTn.url = noThumbnail);
         setThumbnail(currentTn);
     }
 

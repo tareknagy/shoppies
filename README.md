@@ -1,6 +1,6 @@
-# The Shoppies: Movie awards for entrepreneurs!
+# The Shoppies: Movie Awards!
 
-This project was created for the Shopify Web Developer Intern Challenge - Fall 2021. It is a simple app that allows you to search the OMBD database and nominate a movie for the Shoppies awards.
+This project was created for a Web Developer Challenge in the Fall of 2021. It is a web app that allows users to search the OMBD database and nominate a movie for the Shoppies awards.
 
 ## Getting Started
 
